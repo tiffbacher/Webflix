@@ -10,6 +10,7 @@ export default function Root() {
 
     return (
         <div className="root__main">
+            {/* TODO: Add sign-in button to header */}
             <header>
                 <div className="max-width">
                     <Link to="/"><h1 className="logo">WEBFLIX</h1></Link>
@@ -18,6 +19,8 @@ export default function Root() {
             <Outlet />
             <Routes>
                 <Route
+                    // TODO: Move this element into it's own file and add field validation
+                    // TODO: Turn this button into a "Get Started" link that routes to registration
                     index element={
                         <div className="max-width">
                             <h2 className="h1">Unlimited movies, TV shows, and more</h2>
@@ -31,6 +34,7 @@ export default function Root() {
                     }>
                 </Route >
             </Routes >
+            {/* TODO: Add "Learn More" banner that routes to pricing page */}
             <footer>
                 <div className="line-break" />
                 <div className="footer-content max-width">

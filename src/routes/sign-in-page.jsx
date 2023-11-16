@@ -66,6 +66,7 @@ export default function SignInPage() {
                 <i className={`fa-eye ${isPasswordInput ? "fa-solid" : "fa-regular"}`} id="eye" onClick={handlePasswordInputTypeChange} />
             </div>
             <input type="submit" value="Sign In" onClick={e => handleSubmit(e)} />
+            {/* TODO: Add link to registration with "New to Netflix? Sign up now." */}
         </form>
     )
 }

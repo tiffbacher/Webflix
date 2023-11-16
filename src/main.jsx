@@ -24,6 +24,7 @@ const router = createBrowserRouter([
         // TODO: Create a profiles page for this element
         element: <div>Browse Here</div>,
       }
+      // TODO: Create a 'register' route
     ]
   },
 ]);
