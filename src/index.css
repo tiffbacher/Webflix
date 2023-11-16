@@ -94,6 +94,18 @@ form>input[type=submit] {
   background-color: rgb(186, 13, 13);
 }
 
+.password-wrapper {
+  position: relative;
+}
+
+.fa-eye {
+  position: absolute;
+  top: 28%;
+  right: 4%;
+  cursor: pointer;
+  color: lightgray;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
