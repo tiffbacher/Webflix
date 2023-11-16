@@ -119,6 +119,16 @@ form {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
+  width: min-content;
+}
+
+.form__error-message {
+  background-color: rgb(255, 204, 0);
+  color: black;
+  margin: 0 0 1em;
+  border-radius: 8px;
+  padding: .5em;
+  font-size: small;
 }
 
 form>input {

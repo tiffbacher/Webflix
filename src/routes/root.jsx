@@ -8,10 +8,6 @@ export default function Root() {
         setEmail(e.target.value)
     }
 
-    useEffect(() => {
-        console.log({ email });
-    })
-
     return (
         <div className="root__main">
             <header>

@@ -1,10 +1,8 @@
 export const users = {
-    1: {
-        email: 'tiffanybacher@gmail.com',
-        password: 'password1'
+    'tiffanybacher@gmail.com': {
+        password: 'password',
     },
-    2: {
-        email: 'jeremybacher@gmail.com',
-        password: 'password2'
-    }
+    'jeremybacher@gmail.com': {
+        password: 'password2',
+    },
 }
