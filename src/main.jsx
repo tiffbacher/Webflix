@@ -7,13 +7,18 @@ import {
 import './index.css'
 import Root from './routes/root';
 import ErrorPage from './error-page';
+import SignInPage from './routes/sign-in-page';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: 'sign-in',
+    element: <SignInPage />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
