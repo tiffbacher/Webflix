@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { users } from '../users';
 
 export default function SignInPage() {
     const location = useLocation();
+    const navigate = useNavigate();
     const [email, setEmail] = useState(location.state.email || '');
     const [password, setPassword] = useState('');
     const [isPasswordInput, setIsPasswordInput] = useState(true);
@@ -26,7 +27,12 @@ export default function SignInPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        validateUser();
+        const { isValid } = validateUser();
+        if (!isValid) {
+            return;
+        } else {
+            navigate('/browse');
+        }
     }
 
     const validateUser = () => {
@@ -36,9 +42,10 @@ export default function SignInPage() {
         } else if (users[email]?.password !== password) {
             formErrors = { ...formErrors, password: "Incorrect password. Please try again." }
         } else {
-            console.log('User is valid')
+            return { isValid: true }
         }
         setFormErrors(formErrors);
+        return { isValid: false }
     }
 
     const errorMessage = () => {
