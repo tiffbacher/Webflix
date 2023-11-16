@@ -1,3 +1,5 @@
+import { Outlet, Link } from "react-router-dom";
+
 export default function Root() {
     return (
         <>
@@ -6,7 +8,7 @@ export default function Root() {
                 <p>Watch anywhere. Cancel anytime.</p>
                 <p>Ready to watch? Enter your email to sign in.</p>
                 <input type="text" placeholder="Email address" />
-                <button>Sign In</button>
+                <Link to="sign-in" className="button">Sign In</Link>
             </div>
         </>
     )
