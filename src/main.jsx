@@ -11,7 +11,7 @@ import SignInPage from './routes/sign-in-page';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '*',
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
