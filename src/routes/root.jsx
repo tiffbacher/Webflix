@@ -21,7 +21,7 @@ export default function Root() {
             <Outlet />
             <Routes>
                 <Route
-                    // TODO: Move this element into it's own file and add field validation
+                    // TODO: Move this element into it's own component and add field validation
                     // TODO: Turn this button into a "Get Started" link that routes to registration
                     index element={
                         <div className="max-width">
@@ -36,12 +36,11 @@ export default function Root() {
                     }>
                 </Route >
             </Routes >
-            {/* TODO: Add "Learn More" banner that routes to pricing page */}
+            {/* TODO: (Stretch goal) Add "Learn More" banner that routes to pricing page */}
             <footer>
                 <div className="line-break" />
                 <div className="footer-content max-width">
-                    <p>Questions? Call 1-844-505-2993</p>
-                    {/* TODO: Add footer links */}
+                    <p>Questions? Call 1-888-555-2222</p>
                 </div>
             </footer>
         </div >
