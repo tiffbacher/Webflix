@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
+import { useState } from 'react';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
+
+import './root.css';
 
 export default function Root() {
     const [email, setEmail] = useState('');

@@ -14,40 +14,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.max-width {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#root {
-  height: 100vh;
-  width: 100vw;
-}
-
-header {
-  width: 100%;
-}
-
-.root__main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-}
-
-.logo {
-  color: rgb(186, 13, 13);
-  font-weight: 900;
-  letter-spacing: 7px;
-}
-
-.line-break {
-  width: 100%;
-  height: .4em;
-  background-color: rgb(255, 255, 255, .075);
-}
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -122,42 +88,8 @@ form {
   width: min-content;
 }
 
-.form__error-message {
-  background-color: rgb(255, 204, 0);
-  color: black;
-  margin: 0 0 1em;
-  border-radius: 8px;
-  padding: .5em;
-  font-size: small;
-}
-
-form>input {
-  margin-bottom: .5em;
-}
-
 form>input[type=submit] {
-  margin-top: 2em;
   background-color: rgb(186, 13, 13);
-}
-
-.password-wrapper {
-  position: relative;
-}
-
-.fa-eye {
-  position: absolute;
-  top: 28%;
-  right: 4%;
-  cursor: pointer;
-  color: lightgray;
-}
-
-footer {
-  width: 100%;
-}
-
-.footer-content {
-  padding: 2em;
 }
 
 @media (prefers-color-scheme: light) {

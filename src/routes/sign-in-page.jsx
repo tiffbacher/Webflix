@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { users } from '../users';
+
+import './sign-in.css'
 
 export default function SignInPage() {
     const location = useLocation();
@@ -55,17 +57,17 @@ export default function SignInPage() {
     }
 
     return (
-        <form>
+        <form className="sign-in__form">
             <h2>Sign In</h2>
             {(formErrors.email || formErrors.password) && errorMessage()}
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" defaultValue={email} onChange={e => handleEmailChange(e)} />
+            <input type="email" name="email" id="email" className="sign-in__form__input" defaultValue={email} onChange={e => handleEmailChange(e)} />
             <label htmlFor="password">Password:</label>
             <div className="password-wrapper">
-                <input type={isPasswordInput ? 'password' : 'text'} id="password" name="password" value={password} onChange={e => handlePasswordChange(e)} />
+                <input type={isPasswordInput ? 'password' : 'text'} name="password" id="password" className="sign-in__form__input" value={password} onChange={e => handlePasswordChange(e)} />
                 <i className={`fa-eye ${isPasswordInput ? "fa-solid" : "fa-regular"}`} id="eye" onClick={handlePasswordInputTypeChange} />
             </div>
-            <input type="submit" value="Sign In" onClick={e => handleSubmit(e)} />
+            <input type="submit" value="Sign In" className="sign-in__form__button" onClick={e => handleSubmit(e)} />
             {/* TODO: Add link to registration with "New to Netflix? Sign up now." */}
         </form>
     )
