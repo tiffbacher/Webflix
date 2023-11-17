@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { users } from '../users';
+import { users } from '@/utils/users';
 
-import './sign-in.css'
+import './sign-in-page.css'
 
 export default function SignInPage() {
     const location = useLocation();
     const navigate = useNavigate();
-    const [email, setEmail] = useState(location.state.email || '');
+    const [email, setEmail] = useState(location?.state?.email || '');
     const [password, setPassword] = useState('');
     const [isPasswordInput, setIsPasswordInput] = useState(true);
     const [formErrors, setFormErrors] = useState({

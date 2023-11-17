@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 
-import './root.css';
+import './app.css';
 
-export default function Root() {
+export default function App() {
     const [email, setEmail] = useState('');
 
     const handleEmailChange = (e) => {
@@ -11,7 +11,7 @@ export default function Root() {
     }
 
     return (
-        <div className="root__main">
+        <div className="app">
             {/* TODO: Add sign-in button to header */}
             <header>
                 <div className="max-width">
