@@ -1,9 +1,6 @@
 export default function getPassword(password) {
-  const randomNum = Math.floor(Math.random() * 50);
-  console.log({ randomNum });
-
   return new Promise((resolve, reject) => {
-    if (password === "password" || randomNum < 25) {
+    if (password === "password") {
       return setTimeout(() => resolve(true), 1000);
     }
 

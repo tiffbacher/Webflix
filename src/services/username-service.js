@@ -1,8 +1,6 @@
 export default function getUsername(username) {
-  const randomNum = Math.floor(Math.random() * 50);
-
   return new Promise((resolve, reject) => {
-    if (username === "email@email.com" || randomNum < 25) {
+    if (username === "email@email.com") {
       return setTimeout(() => resolve(true), 1000);
     }
 
