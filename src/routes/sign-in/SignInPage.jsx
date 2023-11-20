@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import getPassword from "@/services/password-service";
+import { validateEmail, validatePassword } from "@/utils/form-validators";
 import getUsername from "@/services/username-service";
+import getPassword from "@/services/password-service";
 
 export default function SignInPage() {
   const location = useLocation();
@@ -31,7 +32,6 @@ export default function SignInPage() {
     setLoading(true);
     Promise.all([getUsername(email), getPassword(password)])
       .then(() => {
-        setFormError("");
         navigate("/browse");
       })
       .catch((error) => {
@@ -42,27 +42,10 @@ export default function SignInPage() {
       });
   };
 
-  const validateEmail = () => {
-    const emailRegex = new RegExp(
-      /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
-      "gm",
-    );
-    const isValid = emailRegex.test(email);
-    if (!isValid) {
-      return "Please enter a valid email address.";
-    }
-  };
-
-  const validatePassword = () => {
-    if (password === "") {
-      return "Please enter a password.";
-    }
-  };
-
   const validateInputs = () => {
     let error = "";
-    const passwordError = validatePassword();
-    const emailError = validateEmail();
+    const passwordError = validatePassword(password);
+    const emailError = validateEmail(email);
     if (emailError) {
       error = emailError;
     } else if (passwordError) {
