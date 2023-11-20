@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { users } from "@/utils/users";
 
 export default function SignInPage() {
   const location = useLocation();
@@ -8,10 +7,7 @@ export default function SignInPage() {
   const [email, setEmail] = useState(location?.state?.email || "");
   const [password, setPassword] = useState("");
   const [isPasswordInput, setIsPasswordInput] = useState(true);
-  const [formErrors, setFormErrors] = useState({
-    email: "",
-    password: "",
-  });
+  const [formError, setFormError] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -25,41 +21,47 @@ export default function SignInPage() {
     setIsPasswordInput(!isPasswordInput);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { isValid } = validateUser();
+    const error = validateInputs();
+    if (error) return;
+  };
+
+  const validateEmail = () => {
+    const emailRegex = new RegExp(
+      /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
+      "gm",
+    );
+    const isValid = emailRegex.test(email);
     if (!isValid) {
-      return;
-    } else {
-      navigate("/browse");
+      return "Please enter a valid email address.";
     }
   };
 
-  const validateUser = () => {
-    let formErrors = {};
-    if (!users[email]) {
-      formErrors = {
-        ...formErrors,
-        email:
-          "Sorry, we can't find an account with this email address. Please try again.",
-      };
-    } else if (users[email]?.password !== password) {
-      formErrors = {
-        ...formErrors,
-        password: "Incorrect password. Please try again.",
-      };
-    } else {
-      return { isValid: true };
+  const validatePassword = () => {
+    if (password == "") {
+      return "Please enter a password.";
     }
-    setFormErrors(formErrors);
-    return { isValid: false };
+  };
+
+  const validateInputs = () => {
+    let error;
+    const passwordError = validatePassword();
+    const emailError = validateEmail();
+    if (emailError) {
+      error = emailError;
+    } else if (passwordError) {
+      error = passwordError;
+    }
+    setFormError(error);
+    return error;
   };
 
   const errorMessage = () => {
-    if (formErrors.email || formErrors.password) {
+    if (formError) {
       return (
         <div className="sign-in__form__error-message bg-yellow-400 text-black mb-4 rounded-lg p-2 text-xs">
-          {formErrors.email || formErrors.password}
+          {formError}
         </div>
       );
     }
