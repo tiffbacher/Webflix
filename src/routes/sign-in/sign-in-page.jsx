@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import getPassword from "@/services/password-service";
+import getUsername from "@/services/username-service";
 
 export default function SignInPage() {
   const location = useLocation();
@@ -25,6 +27,15 @@ export default function SignInPage() {
     e.preventDefault();
     const error = validateInputs();
     if (error) return;
+
+    Promise.all([getUsername(email), getPassword(password)])
+      .then(() => {
+        setFormError("");
+        navigate("/browse");
+      })
+      .catch((error) => {
+        setFormError(error.message);
+      });
   };
 
   const validateEmail = () => {
@@ -39,13 +50,13 @@ export default function SignInPage() {
   };
 
   const validatePassword = () => {
-    if (password == "") {
+    if (password === "") {
       return "Please enter a password.";
     }
   };
 
   const validateInputs = () => {
-    let error;
+    let error = "";
     const passwordError = validatePassword();
     const emailError = validateEmail();
     if (emailError) {
