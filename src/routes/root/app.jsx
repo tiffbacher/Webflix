@@ -9,7 +9,7 @@ export default function App() {
         {/* TODO: Add sign-in button to header */}
         <div className="max-width mx-auto">
           <Link to="/">
-            <h1 className="logo text-red-600 my-12 tracking-widest font-black text-5xl">
+            <h1 className="logo text-red-600 mt-12 tracking-widest font-black text-5xl">
               WEBFLIX
             </h1>
           </Link>

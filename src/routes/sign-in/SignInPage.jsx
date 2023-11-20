@@ -75,7 +75,7 @@ export default function SignInPage() {
   };
 
   return (
-    <form className="sign-in__form bg-neutral-800 p-8 flex flex-col rounded-lg w-min">
+    <form className="sign-in__form bg-neutral-800 p-8 flex flex-col rounded-lg w-min my-8">
       <h2 className="text-xl font-bold mb-4">Sign In</h2>
       {errorMessage()}
       <label htmlFor="email">Email:</label>

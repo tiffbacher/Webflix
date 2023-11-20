@@ -5,9 +5,10 @@
 @layer utilities {
   .max-width {
     max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 1em;
+    margin-right: auto;
+    margin-left: auto;
     padding-right: 1em;
+    padding-left: 1em;
   }
 }
 
