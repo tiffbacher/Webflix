@@ -29,3 +29,6 @@ To run locally:
 - Build pricing page
 - Add banner linking to pricing page
 - Build profiles page
+
+## Technologies
+- React + Vite, React Router, Tailwind
