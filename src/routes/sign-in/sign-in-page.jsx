@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { users } from "@/utils/users";
 
-import "./sign-in-page.css";
-
 export default function SignInPage() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -58,38 +56,44 @@ export default function SignInPage() {
   };
 
   const errorMessage = () => {
-    return (
-      <div className="form__error-message">
-        {formErrors.email || formErrors.password}
-      </div>
-    );
+    if (formErrors.email || formErrors.password) {
+      return (
+        <div className="sign-in__form__error-message bg-yellow-400 text-black mb-4 rounded-lg p-2 text-xs">
+          {formErrors.email || formErrors.password}
+        </div>
+      );
+    }
   };
 
   return (
-    <form className="sign-in__form">
-      <h2>Sign In</h2>
-      {(formErrors.email || formErrors.password) && errorMessage()}
+    <form className="sign-in__form bg-neutral-800 p-8 flex flex-col rounded-lg w-min">
+      <h2 className="text-xl font-bold mb-4">Sign In</h2>
+      {errorMessage()}
       <label htmlFor="email">Email:</label>
       <input
         type="email"
         name="email"
         id="email"
-        className="sign-in__form__input"
+        className="sign-in__form__input mb-2"
         defaultValue={email}
         onChange={(e) => handleEmailChange(e)}
       />
       <label htmlFor="password">Password:</label>
-      <div className="password-wrapper">
+      <div className="password-wrapper relative">
         <input
           type={isPasswordInput ? "password" : "text"}
           name="password"
           id="password"
-          className="sign-in__form__input"
+          className="sign-in__form__input mb-2"
           value={password}
           onChange={(e) => handlePasswordChange(e)}
         />
         <i
-          className={`fa-eye ${isPasswordInput ? "fa-solid" : "fa-regular"}`}
+          className={`
+            fa-eye
+            ${isPasswordInput ? "fa-solid" : "fa-regular"}
+            absolute text-neutral-300 top-3.5 right-3
+          `}
           id="eye"
           onClick={handlePasswordInputTypeChange}
         />
@@ -97,7 +101,7 @@ export default function SignInPage() {
       <input
         type="submit"
         value="Sign In"
-        className="sign-in__form__button"
+        className="sign-in__form__button mt-8 bg-red-600"
         onClick={(e) => handleSubmit(e)}
       />
       {/* TODO: Add link to registration with "New to Netflix? Sign up now." */}
