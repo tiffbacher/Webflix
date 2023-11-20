@@ -10,6 +10,7 @@ export default function SignInPage() {
   const [password, setPassword] = useState("");
   const [isPasswordInput, setIsPasswordInput] = useState(true);
   const [formError, setFormError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -27,7 +28,7 @@ export default function SignInPage() {
     e.preventDefault();
     const error = validateInputs();
     if (error) return;
-
+    setLoading(true);
     Promise.all([getUsername(email), getPassword(password)])
       .then(() => {
         setFormError("");
@@ -35,6 +36,9 @@ export default function SignInPage() {
       })
       .catch((error) => {
         setFormError(error.message);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -78,6 +82,14 @@ export default function SignInPage() {
     }
   };
 
+  const spinner = () => {
+    if (loading) {
+      return (
+        <i className="fa-solid fa-circle-notch fa-spin text-white h-4 w-4 absolute bottom-3.5 right-3" />
+      );
+    }
+  };
+
   return (
     <form className="sign-in__form bg-neutral-800 p-8 flex flex-col rounded-lg w-min">
       <h2 className="text-xl font-bold mb-4">Sign In</h2>
@@ -107,16 +119,18 @@ export default function SignInPage() {
             ${isPasswordInput ? "fa-solid" : "fa-regular"}
             absolute text-neutral-300 top-3.5 right-3
           `}
-          id="eye"
           onClick={handlePasswordInputTypeChange}
         />
       </div>
-      <input
-        type="submit"
-        value="Sign In"
-        className="sign-in__form__button mt-8 bg-red-600"
-        onClick={(e) => handleSubmit(e)}
-      />
+      <div className="button-wrapper relative">
+        <input
+          type="submit"
+          value="Sign In"
+          className="sign-in__form__button mt-8 bg-red-600 w-full"
+          onClick={(e) => handleSubmit(e)}
+        />
+        {spinner()}
+      </div>
       {/* TODO: Add link to registration with "New to Netflix? Sign up now." */}
     </form>
   );

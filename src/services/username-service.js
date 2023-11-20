@@ -3,7 +3,7 @@ export default function getUsername(username) {
 
   return new Promise((resolve, reject) => {
     if (username === "email@email.com" || randomNum < 25) {
-      return setTimeout(() => resolve(true), 500);
+      return setTimeout(() => resolve(true), 1000);
     }
 
     setTimeout(
@@ -13,7 +13,7 @@ export default function getUsername(username) {
             "An account with that email address was not found. Please try again.",
           ),
         ),
-      500,
+      1000,
     );
   });
 }
