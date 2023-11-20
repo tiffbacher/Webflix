@@ -20,6 +20,16 @@ To run locally:
 - Submitting the form with "email@email.com" and "password" will successfully take the user to `/browse`
 - Submitting the form with any other email or password will result in error messages
   - (Pssst... Implementation can be seen in `SignInPage`, starting with `handleSubmit`)
+ 
+## Screenshots
+Page: `/`
+
+![Screenshot 2023-11-20 at 9 33 25 AM](https://github.com/tiffbacher/Webflix/assets/56415813/111f1dca-9452-45b6-9c52-df15ece7ad49)
+
+Page: `/sign-in`
+
+![Screenshot 2023-11-20 at 9 34 29 AM](https://github.com/tiffbacher/Webflix/assets/56415813/c1452a80-e556-41a9-9093-00eb83b849df)
+
 
 ## TODO
 
