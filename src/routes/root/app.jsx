@@ -18,11 +18,13 @@ export default function App() {
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="sign-in" element={<SignInPage />} />
+        {/* TODO: Build profiles page */}
         <Route path="browse" element={<div>Browse</div>} />
+        {/* TODO: Build registration flow */}
         <Route path="register" element={<div>Register</div>} />
       </Routes>
       <footer className="w-full">
-        {/* TODO: (Stretch goal) Add "Learn More" banner that routes to pricing page */}
+        {/* TODO: Add "Learn More" banner that routes to pricing page/registration flow */}
         <div className="line-break w-full h-2 bg-neutral-700" />
         <div className="footer-content max-width mx-auto py-8">
           <p>Questions? Call 1-888-555-2222</p>
