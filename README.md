@@ -19,6 +19,7 @@ To run locally:
 - An empty password will result in an error message
 - Submitting the form with "email@email.com" and "password" will successfully take the user to `/browse`
 - Submitting the form with any other email or password will result in error messages
+  - (Pssst... Implementation can be seen in `SignInPage`, starting with `handleSubmit`)
 
 ## TODO
 
@@ -31,4 +32,5 @@ To run locally:
 - Build profiles page
 
 ## Technologies
+
 - React + Vite, React Router, Tailwind
