@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { validateEmail } from "@/utils/form-validators";
 
 export default function HomePage() {
   const [email, setEmail] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+  };
+
+  const validateInput = () => {
+    const error = validateEmail(email);
+    console.error(error);
   };
 
   return (
@@ -29,9 +35,11 @@ export default function HomePage() {
           to="sign-in"
           className="button ml-4 py-3 px-8"
           state={{ email: email }}
+          onClick={validateInput}
         >
           Sign In
         </Link>
+        {/* TODO: Add feedback for field validation errors */}
       </div>
     </div>
   );
