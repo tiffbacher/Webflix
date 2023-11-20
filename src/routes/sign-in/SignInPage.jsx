@@ -126,7 +126,7 @@ export default function SignInPage() {
         <input
           type="submit"
           value="Sign In"
-          className="sign-in__form__button mt-8 bg-red-600 w-full"
+          className="sign-in__form__button button mt-8 bg-red-600 w-full cursor-pointer"
           onClick={(e) => handleSubmit(e)}
         />
         {spinner()}

@@ -25,7 +25,11 @@ export default function HomePage() {
           onChange={(e) => handleEmailChange(e)}
         />
         {/* TODO: Turn this button into "Get Started" button that links to registration */}
-        <Link to="sign-in" className="button" state={{ email: email }}>
+        <Link
+          to="sign-in"
+          className="button ml-4 py-3 px-8"
+          state={{ email: email }}
+        >
           Sign In
         </Link>
       </div>
