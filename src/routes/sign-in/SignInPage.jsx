@@ -117,7 +117,7 @@ export default function SignInPage() {
           className={`
             fa-eye
             ${isPasswordInput ? "fa-solid" : "fa-regular"}
-            absolute text-neutral-300 top-3.5 right-3
+            absolute text-neutral-300 top-3.5 right-3 cursor-pointer
           `}
           onClick={handlePasswordInputTypeChange}
         />
