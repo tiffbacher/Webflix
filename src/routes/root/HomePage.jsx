@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
+    setEmail(e.target.value);
+  };
 
   return (
     <div className="max-width">
@@ -14,9 +14,17 @@ export default function HomePage() {
       <p>Watch anywhere. Cancel anytime.</p>
       <p>Ready to watch? Enter your email to sign in.</p>
       <div>
-        <input type="email" name="email" placeholder="Email address" value={email} onChange={e => handleEmailChange(e)} />
-        <Link to="sign-in" className="button" state={{ email: email }}>Sign In</Link>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          value={email}
+          onChange={(e) => handleEmailChange(e)}
+        />
+        <Link to="sign-in" className="button" state={{ email: email }}>
+          Sign In
+        </Link>
       </div>
     </div>
-  )
+  );
 }

@@ -11,7 +11,7 @@ export default function App() {
         {/* TODO: Add sign-in button to header */}
         <div className="max-width">
           <Link to="/">
-            <h1 className="logo">WEBFLIX</h1>
+            <h1 className="logo text-white">WEBFLIX</h1>
           </Link>
         </div>
       </header>
