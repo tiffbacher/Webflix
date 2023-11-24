@@ -30,7 +30,6 @@ export default function SignInPage() {
     const error = validateInputs();
     if (error) return;
     setLoading(true);
-    // Using Promise.all here and not Promise.allSettled because we only care that 1 API call rejects and do not need to wait for all calls to complete
     Promise.all([getUsername(email), getPassword(password)])
       .then(() => {
         navigate("/browse");
