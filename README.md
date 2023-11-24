@@ -1,6 +1,6 @@
 # Webflix
 
-Mini sign-in and registration flow inspired by Netflix
+Mini sign-in and registration flow inspired by Netflix (Still very much a WIP)
 
 ## Get started
 
@@ -19,7 +19,6 @@ To run locally:
 - An empty password will result in an error message
 - Submitting the form with "email@email.com" and "password" will successfully take the user to `/browse`
 - Submitting the form with any other email or password will result in error messages
-  - (Pssst... Implementation can be seen in `SignInPage`, starting with `handleSubmit`)
  
 ## Screenshots
 Page: `/`
@@ -29,7 +28,6 @@ Page: `/`
 Page: `/sign-in`
 
 ![Screenshot 2023-11-20 at 9 34 29 AM](https://github.com/tiffbacher/Webflix/assets/56415813/c1452a80-e556-41a9-9093-00eb83b849df)
-
 
 ## TODO
 
@@ -41,6 +39,9 @@ Page: `/sign-in`
 - Add banner linking to pricing page
 - Build profiles page
 
-## Technologies
+## Technologies + Tools
 
-- React + Vite, React Router, Tailwind
+- React + Vite
+- React Router
+- Tailwind
+- Prettier + ESLint
