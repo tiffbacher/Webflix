@@ -11,7 +11,7 @@ export default function HomePage() {
 
   const validateInput = () => {
     const error = validateEmail(email);
-    console.error(error);
+    if (error) console.error(error);
   };
 
   return (
