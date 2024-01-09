@@ -12,15 +12,18 @@ To run locally:
 ## Behavior to expect
 
 - User can input their email on `/` and click "Sign In"
-- Email input validation errors will show as a console error
-- Clicking "Sign In" will take user to `/sign-in`
-- User can input their email and password on `sign-in`
-- An empty email or an invalid email will result in error messages
-- An empty password will result in an error message
+- Clicking "Sign In" will validate email input
+  - An empty or invalid email will result in error messages
+- Successful email validation will take user to `/sign-in`
+- User can input their email and password on `sign-in` and click "Sign In"
+- Clicking "Sign In" will validate email and password inputs
+  - An empty email or an invalid email will result in error messages
+  - An empty password will result in an error message
 - Submitting the form with "email@email.com" and "password" will successfully take the user to `/browse`
-- Submitting the form with any other email or password will result in error messages
- 
+- Submitting the form with an incorrect email or password will result in error messages
+
 ## Screenshots
+
 Page: `/`
 
 ![Screenshot 2023-11-20 at 9 33 25 AM](https://github.com/tiffbacher/Webflix/assets/56415813/111f1dca-9452-45b6-9c52-df15ece7ad49)
@@ -33,11 +36,8 @@ Page: `/sign-in`
 
 - ADD TESTS! 🤪
 - Update with Typescript
-- Add field validation feedback to home page input
 - Build registration flow
-- Build pricing page
-- Add banner linking to pricing page
-- Build profiles page
+- Build mock landing page once sign in or registration is complete
 
 ## Technologies + Tools
 
