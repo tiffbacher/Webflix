@@ -84,7 +84,7 @@ export default function SignInPage() {
         id="email"
         className="sign-in__form__input mb-2"
         defaultValue={email}
-        onChange={(e) => handleEmailChange(e)}
+        onChange={handleEmailChange}
       />
       <label htmlFor="password">Password:</label>
       <div className="password-wrapper relative">
@@ -94,7 +94,7 @@ export default function SignInPage() {
           id="password"
           className="sign-in__form__input mb-2"
           value={password}
-          onChange={(e) => handlePasswordChange(e)}
+          onChange={handlePasswordChange}
         />
         <i
           className={`
@@ -110,7 +110,7 @@ export default function SignInPage() {
           type="submit"
           value="Sign In"
           className="sign-in__form__button button mt-8 bg-red-600 w-full cursor-pointer"
-          onClick={(e) => handleSubmit(e)}
+          onClick={handleSubmit}
         />
         {spinner()}
       </div>
