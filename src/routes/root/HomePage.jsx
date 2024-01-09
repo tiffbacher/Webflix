@@ -22,10 +22,12 @@ export default function HomePage() {
   const errorMessage = () => {
     if (error) {
       return (
-        <p className="home-page__form__error-messag text-red-600 py-2 text-xs">
+        <p className="home-page__form__error-message text-red-600 py-2 text-xs">
           {error}
         </p>
       );
+    } else {
+      return <div className="home-page__form__error-placeholder h-8" />;
     }
   };
 
