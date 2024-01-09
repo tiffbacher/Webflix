@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
 import { validateEmail } from "@/utils/form-validators";
 import { useNavigate } from "react-router-dom";
 
@@ -64,14 +63,6 @@ export default function HomePage() {
           onChange={(e) => handleEmailChange(e)}
         />
         {/* TODO: Turn this button into "Get Started" button that links to registration */}
-        {/* <Link
-          to="sign-in"
-          className="button ml-4 py-3 px-8"
-          state={{ email: email }}
-          onClick={validateInput}
-        >
-          Sign In
-        </Link> */}
         <div className="button-wrapper relative">
           <input
             type="submit"
