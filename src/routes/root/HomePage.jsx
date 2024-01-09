@@ -1,22 +1,16 @@
 import { useState } from "react";
 // import { Link } from "react-router-dom";
 import { validateEmail } from "@/utils/form-validators";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState("");
   const [error, setError] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-  };
-
-  const validateInput = () => {
-    const error = validateEmail(email);
-    if (error) {
-      setError(error);
-      console.error(error);
-    }
   };
 
   const errorMessage = () => {
@@ -34,9 +28,11 @@ export default function HomePage() {
   const handleSubmit = () => {
     setError("");
     setLoading(true);
-    const error = validateInput();
+    const error = validateEmail(email);
     if (error) {
       setError(error);
+    } else {
+      navigate("/sign-in", { state: { email } });
     }
     setLoading(false);
   };
