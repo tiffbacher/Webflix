@@ -51,7 +51,7 @@ Page: `/sign-in`
 - ADD TESTS! 🤪
 - Update with Typescript
 - Build registration flow
-- Build mock landing page once sign in or registration is complete
+- Build mock landing page
 
 ## Technologies + Tools
 
