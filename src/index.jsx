@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { App, ErrorPage } from "@/routes/root";
+import App from "./routes/root/App";
+import { ErrorPage } from "@/routes/root";
 
 import "./index.css";
 
