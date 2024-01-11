@@ -1,13 +1,27 @@
 # Webflix
 
-Mini sign-in and registration flow inspired by Netflix (Still very much a WIP)
+Mini sign-in and registration flow inspired by Netflix (Still very much a WIP). 
+
+## Personal objective
+
+The purpose of this project for me was to re-familiarize myself with React after working in Vue for the last few years. Coming back to React has been like riding a bicycle and has been extremely fun and satisfying. I did not even realize how much I missed React until I started working on this project!
 
 ## Get started
 
 To run locally:
 
-- run `npm install`
-- run `npm run dev`
+1. ```bash
+   git clone https://github.com/tiffbacher/Webflix.git
+   ```
+2. ```bash
+   cd Webflix
+   ```
+3. ```bash
+   npm install
+   ```
+4. ```bash
+   npm run dev
+   ```
 
 ## Behavior to expect
 
